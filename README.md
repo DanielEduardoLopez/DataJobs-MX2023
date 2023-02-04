@@ -39,7 +39,7 @@ The methodology of the present study is based on Rollin’s Foundational Methodo
 
 1) **Analytical approach**: Descriptive and inferential statistics.
 2) **Data requirements**: Data about job positions such as job name, salary, employer and location.
-3) **Data collection**: Data was collected from the OCC Website (Mexico) on 03 February 2022, through web scraping with Python 3 and its libraries Selenium and BeautifulSoup.
+3) **Data collection**: Data was collected from the OCC Website (Mexico) on 04 February 2022, through web scraping with Python 3 and its libraries Selenium and BeautifulSoup.
 4) **Data exploration and preparation**: Data then was explored and cleaned with Python 3 and its libraries Pandas and Numpy. 
 5) **Data analysis**: Data was analyzed with Python 3 and its libraries Pandas, Scipy and Statsmodels and visualized with Matplotlib, Seaborn, Folium and Plotly. 
 6) **Statistical analysis**: The D'Agostino-Pearson normality test was used to assess the normality of the data jobs salary distribution. Then, both parametric (ANOVA and t-test with unequal variance) and non-parametric (Mann-Whitney U and Kruskal-Wallis H) tests were carried out to assess the significance of the obtained results.
