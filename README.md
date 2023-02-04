@@ -74,3 +74,4 @@ ___
 File | Description 
 --- | --- 
 1_DataJobsMX2023_DataCollection.ipynb | Notebook with the Python code for collecting the required data from the OCC website through web scraping.
+Dataset_Raw.csv | Raw data retrieved from the web scraping.
