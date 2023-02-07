@@ -6,7 +6,6 @@
 #### By Daniel Eduardo López
 
 **28/02/2023**
-</p>
 
 **[LinkedIn](https://www.linkedin.com/in/daniel-eduardo-lopez)**
 
