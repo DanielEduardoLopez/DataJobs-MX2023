@@ -73,5 +73,6 @@ ___
 File | Description 
 --- | --- 
 1_DataJobsMX2023_DataCollection.ipynb | Notebook with the Python code for collecting the required data from the OCC website through web scraping.
+1_DataJobsMX2023_DataCollection.html | HTML version of the Jupyter notebook.
 2_DataJobsMX2023_DataAnalysis.ipynb | Notebook with the Python code for exploring, wrangling, analyzing, and visualizing the job data.
 Dataset_Raw.csv | Raw data retrieved from the web scraping.
