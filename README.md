@@ -145,7 +145,17 @@ Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/Da
 
 ___
 ### **7. Dashboard**
-Pending...
+To view and play with the interactive Dashboard, please download the **[app](https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/3_Dashboard.py)** into a directory of your choice. Then, run the app using the following command in Windows:
+```bash
+python 3_Dashboard.py
+```
+And visit http://127.0.0.1:8050/ in your web browser.
+
+<p align="center">
+	<img src="Images/Dashboard.png?raw=true" width=65% height=65%>
+</p>
+
+Please note that Python 3 and its libraries Numpy, Pandas, Plotly and Dash are required for properly running the dashboard.
 
 
 ___
