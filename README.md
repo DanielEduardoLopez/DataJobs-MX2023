@@ -160,7 +160,31 @@ Please note that Python 3 and its libraries Numpy, Pandas, Plotly and Dash are r
 
 ___
 ### **8. Conclusions**
-Pending...
+**Data Architect** is the data job category with **the highest salary** in the Mexican labor market in February 2023 according to the OCC website.
+
+On the contrary, **Data Analyst** is the data job category **more demanded** in the current Mexican labor market and across the different Mexican states, even though it was also the one with **the lowest salary**.
+
+**Ciudad de México** is the place where it is possible to find the highest jobs demand and the highest salaries. 
+
+**Data Architect** and **Data Scientist** positions are concentrated in Ciudad de México, Nuevo León, and Jalisco, and are most likely to be found in recruitment agencies and tech consulting firms.
+
+**Data Analyst**, **Data Scientist**, and **Data Engineer** positions are more demanded across different type of organizations and locations.
+
+**Manpower**, **Atento Servicios**, **Praxis** and **Softek** exhibited the highest demand of data jobs positions; while **Especialistas en Talento**, **Zemsania México**, **Resources Connection México**, **Zegovia RH**, and **Reclutamiento en Tecnología** offered the highest salaries.
+
+This study had **limitations**: 
+- Only used OCC as source of information during a very short period of time (just 07 February 2023). 
+- Very few salary observations were retrieved for Data Architect and Business Analyst positions.
+- Collected data mostly correspond to Ciudad de México, Nuevo León, Jalisco, and Estado de México.
+- No distinction was made among entry level, middle and senior positions. 
+
+**Future perspectives**:
+- Gather data from more job websites.
+- Retrieve information for a longer time span.
+- Collect more salary observations for Data Architect and Data Scientist positions.
+- Collect more salary data for other Mexican states.
+- Make a distinction among entry level, middle and senior positions.
+
 
 ___
 ### **9. Partial Bibliography**
