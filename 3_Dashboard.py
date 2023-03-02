@@ -21,16 +21,13 @@ from dash import dcc
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 import plotly.express as px
+import plotly.graph_objects as go
 
 # Read the Job data into a Pandas dataframe
 df = pd.read_csv("https://raw.githubusercontent.com/DanielEduardoLopez/DataJobsMX2023/main/Dataset_Clean.csv").rename(columns = {'Avg Salary': 'Salary'})
 
 max_salary = df['Salary'].max()
 min_salary = df['Salary'].min()
-
-# Configuration parameters for the Graphs style
-gwidth = '30%' # Graphs width
-gheight = '30%'  # Graphs height
 
 # Plotting functions
 
@@ -45,9 +42,56 @@ def plot_pie_chart(df):
                            title='Demand of Data Jobs Per Category')
   demand_job_plot.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=16,
                     marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
-  demand_job_plot.update_layout(transition_duration=400, title_x=0.5, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+  demand_job_plot.update_layout(transition_duration=400, title_x=0.5, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                                legend=dict(
+                                    #yanchor="bottom",
+                                    y=0.01,
+                                    #xanchor="right",
+                                    x=0.99)
+                                )
   
   return demand_job_plot
+
+# Sample size and Avg Salary: Card
+def plot_card(df):
+
+    sample_size = len(df)
+
+    avg_salary = np.mean(df['Salary'])
+
+    card = go.Figure()
+
+    card.add_trace(go.Indicator(
+        mode="number",
+        value=avg_salary,
+        title={
+            "text": "Avg. Mth. Salary (MXN)",
+            "font": {"size": 15}
+        },
+        number={"font": {"size": 30}},
+        domain = {'row': 0, 'column': 1})
+    )
+
+    card.add_trace(go.Indicator(
+        mode="number",
+        value=sample_size,
+        title={
+            "text": "Number of Data Jobs",
+            "font": {"size": 15}
+            },
+        number={"font": {"size": 30}},
+        domain = {'row': 1, 'column': 1})
+    )
+
+    card.update_layout(paper_bgcolor = "#B3D5FA",
+                        grid = {'rows': 2, 'columns': 1, 'pattern': "independent"},
+                       width = 210,
+                        height = 150,
+                       margin = {'t': 25, 'r': 0, 'l': 0, 'b': 0}
+                      )
+
+    return card
+
 
 # Company Demand: Treemap
 def plot_treemap(df):
@@ -80,12 +124,14 @@ def plot_barchart(df):
 
   demand_company_plot = px.bar(company_df.sort_values(by = 'Vacancies'), x='Vacancies', y='Company',
             color = 'Vacancies', color_continuous_scale=bar_colors,
-            #text="Vacancies", 
+            #text="Vacancies",
             height=720,
             title= f'Top {top} Companies Demanding Data Jobs',
             opacity = 0.8)
-  demand_company_plot.update_traces(marker_color= bar_colors, marker_line_color='#06477D', textfont_size=11, textangle=0, textposition="outside", cliponaxis=False)
+  demand_company_plot.update_traces(marker_color= bar_colors, marker_line_color='#06477D', textfont_size=11, textangle=0,
+                                    textposition="outside", cliponaxis=False, hovertemplate=None)
   demand_company_plot.update_layout(transition_duration=400, title_x=0.5, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="#e1e7ff")
+  demand_company_plot.update_layout(hovermode="x unified")
 
   return demand_company_plot
 
@@ -161,7 +207,7 @@ def plot_boxplot(df):
                           color_discrete_sequence=px.colors.sequential.Blues_r,
                           category_orders={"Job": ['Data Architect', 'Data Engineer', 'Data Scientist', 'Business Analyst', 'Data Analyst']},
                           labels={
-                                  "Salary": "Monthly Salary (MXN)",
+                                  "Salary": "Average Monthly Salary (MXN)",
                                   "Job": "Data Job Category"},
                           title='Salary Per Data Job Category',
                           height=450
@@ -298,7 +344,7 @@ app.layout = html.Div(children=[
                                 # Adding Author
                                 html.P("By Daniel Eduardo López",
                                         style={'textAlign': 'center', 'color': 'navy',
-                                               'font-size': 15, 'font-family': 'Tahoma'}),
+                                               'font-size': 16, 'font-family': 'Tahoma'}),
                                 dcc.Link(html.A('GitHub'), href="https://github.com/DanielEduardoLopez",
                                         style={'textAlign': 'center', 'color': 'navy',
                                                'font-size': 12, 'font-family': 'Tahoma',
@@ -317,8 +363,8 @@ app.layout = html.Div(children=[
                                         style={'textAlign': 'center', 'color': 'black',
                                                'font-size': 14, 'font-family': 'Tahoma'}),
                                 
-                                html.P("Data was collected on February 7, 2023 from the OCC website.",
-                                        style={'textAlign': 'center', 'color': 'black',
+                                html.P("- Data was collected on February 7, 2023 from the OCC website. -",
+                                        style={'textAlign': 'center', 'color': 'navy',
                                                'font-size': 14, 'font-family': 'Tahoma'}),
                                 html.Br(),
                                 
@@ -441,8 +487,16 @@ app.layout = html.Div(children=[
                                                           'font-size': 15, 'font-family': 'Tahoma'}
                                                         ),
                                               dcc.RangeSlider(id='salary_slider',
-                                                              min=0, max=100000, step=1000,
-                                                              marks={0: '$0', 20000: '$20,000', 40000: '$40,000', 60000: '$60,000', 80000: '$80,000', 100000: '$100,000'},
+                                                              min=0, max=140000, step=1000,
+                                                              marks={0:  {'label': '$0', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     20000: {'label': '$20,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     40000: {'label': '$40,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     60000: {'label': '$60,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     80000: {'label': '$80,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     100000: {'label': '$100,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     120000: {'label': '$120,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}},
+                                                                     140000: {'label': '$140,000', 'style': {'font-size': 16, 'font-family': 'Tahoma'}}
+                                                                     },
                                                               value=[min_salary, max_salary]
                                                               ),
                                     ], id='fifth-selector',
@@ -485,6 +539,20 @@ app.layout = html.Div(children=[
                                                       }                                                
                                             ),
 
+                                    # Card with Data Jobs Info
+                                    html.Div(children=[
+
+                                        # Card
+                                        dcc.Graph(id='card'),
+
+                                    ], id='card-container',
+                                        style={'margin-top': '-320px',
+                                               'margin-left': '22%',
+                                               #'width': '300px',
+                                               #'height': '300px',
+                                               }
+                                    ),
+
                                       # Second plot
                                       html.Div(children=[
                                       
@@ -492,8 +560,8 @@ app.layout = html.Div(children=[
                                                   dcc.Graph(id='salary_job_plot'),
                                           
                                           ], id='Boxplot',
-                                            style={'margin-top': '-400px',
-                                                    'margin-left': '35%',
+                                            style={'margin-top': '-230px',
+                                                    'margin-left': '35.5%',
                                                     'width': '33%',
                                                     'height': '400px',                                                                                                            
                                                     }                                                
@@ -506,7 +574,7 @@ app.layout = html.Div(children=[
                                             dcc.Graph(id='demand_location_plot'),
                                             ], id='Map',
                                             style={'margin-top': '-400px',
-                                                    'margin-left': '60%',
+                                                    'margin-left': '60.5%',
                                                     'width': '40%',
                                                     'height': '400px',
                                                     }
@@ -516,7 +584,7 @@ app.layout = html.Div(children=[
                                         'margin-left': '5px',
                                         'margin-right': '5px',
                                         'width': '99%',
-                                       'height': '500px',
+                                       'height': '485px',
                                        'float': 'center',
                                        }
                                 ),
@@ -598,7 +666,8 @@ app.layout = html.Div(children=[
                Output(component_id='demand_location_plot', component_property='figure'),
                Output(component_id='salary_job_plot', component_property='figure'),
                Output(component_id='salary_company_plot', component_property='figure'),
-               Output(component_id='salary_location_plot', component_property='figure')],
+               Output(component_id='salary_location_plot', component_property='figure'),
+               Output(component_id='card', component_property='figure')],
               [Input(component_id='job_dropdown', component_property='value'),
                Input(component_id='location_dropdown', component_property='value'),
                Input(component_id='company_dropdown', component_property='value'),
@@ -631,6 +700,7 @@ def update_output(job, location, company, salary, salary_filter):
     salary_job_plot = plot_boxplot(dff)
     salary_company_plot = plot_heatmap(dff)
     salary_location_plot = plot_contour(dff)
+    card = plot_card(dff)
 
   else:
 
@@ -643,6 +713,7 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
         
         elif ('All' in (job and location)) and ('All' not in company):
           dff = dff[dff.Company.isin(company)]
@@ -653,6 +724,7 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
         
         elif ('All' in (company and job)) and ('All' not in location):
           dff = dff[dff.Location.isin(location)]
@@ -662,7 +734,8 @@ def update_output(job, location, company, salary, salary_filter):
           demand_location_plot = plot_cloropleth(dff)
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
-          salary_location_plot = plot_contour(dff)              
+          salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
         
         elif ('All' in job) and ('All' not in (company and location)):
           dff = dff[(dff.Company.isin(company)) & (dff.Location.isin(location))]
@@ -673,6 +746,7 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
 
         elif ('All' in location) and ('All' not in (company and job)):
           dff = dff[(dff.Company.isin(company)) & (dff.Job.isin(job))]
@@ -683,6 +757,7 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
 
         elif ('All' in company) and ('All' not in (location and job)):
           dff = dff[(dff.Location.isin(location)) & (dff.Job.isin(job))]
@@ -693,6 +768,7 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
 
         elif 'All' not in (company and location and job):
           dff = dff[(dff.Job.isin(job)) & (dff.Location.isin(location)) & (dff.Company.isin(company))]
@@ -703,12 +779,13 @@ def update_output(job, location, company, salary, salary_filter):
           salary_job_plot = plot_boxplot(dff)
           salary_company_plot = plot_heatmap(dff)
           salary_location_plot = plot_contour(dff)
+          card = plot_card(dff)
         
         else:
           raise PreventUpdate 
 
-  return demand_job_plot, demand_company_plot, demand_location_plot, salary_job_plot, salary_company_plot, salary_location_plot
+  return demand_job_plot, demand_company_plot, demand_location_plot, salary_job_plot, salary_company_plot, salary_location_plot, card
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
