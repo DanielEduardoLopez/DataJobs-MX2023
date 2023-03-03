@@ -41,7 +41,7 @@ The methodology of the present study is based on Rollin’s Foundational Methodo
 3) **Data collection**: Data was collected from the OCC Website (Mexico) on 07 February 2022, through web scraping with Python 3 and its libraries Selenium and BeautifulSoup.
 4) **Data exploration and preparation**: Data then was explored and cleaned with Python 3 and its libraries Pandas and Numpy. 
 5) **Data analysis**: Data was analyzed with Python 3 and its libraries Pandas, Scipy and Statsmodels and visualized with Matplotlib, Seaborn, Folium and Plotly. 
-6) **Statistical analysis**: The D'Agostino-Pearson normality test was used to assess the normality of the data jobs salary distribution. Then, both parametric (ANOVA and t-test with unequal variance) and non-parametric (Mann-Whitney U and Kruskal-Wallis H) tests were carried out to assess the significance of the obtained results.
+6) **Statistical analysis**: The D'Agostino-Pearson normality test was used to assess the normality of the data jobs salary distribution. Then, both parametric (ANOVA and t-test with unequal variance) and non-parametric (Mann-Whitney U and Kruskal-Wallis H) tests were carried out to assess the significance of the obtained results. Furthermore, an effect size analysis was carried out by computing the absolute mean salary differences, the Cohen’s d, and the bootstrap confidence intervals for the mean for each data job category. This, in order to assess whether the salary differences are significant from a practical point of view.
 
 Furthermore:
 
@@ -105,13 +105,15 @@ The salaries for each data job category are shown in the following box plot:
 
 The figure above suggests that, the average and median salaries for the different data jobs categories are:
 
-Data Job Category | Average Monthly Salary (MXN) |  Median Monthly Salary (MXN)
+Data Job Category | Mean Monthly Salary (MXN) |  Median Monthly Salary (MXN)
 ---|---|---
 Data Architect | $86,562 |$75,000 
 Data Engineer | $49,567 | $50,000 
 Data Scientist | $39,687 | $39,750
 Business Analyst | $32,415 | $32,000
 Data Analyst | $21,240 | $16,750
+
+Thus, in view of the table above, the mean and median monthly salaries are consistent for each data job category. And, it is noteworthy that the salary figures for Data Architect positions are the highest ones.
 
 A further one-way analysis of variance (ANOVA) procedure and a Kruskal-Wallis H test confirmed that the salary differences among the data jobs categories were statistically significant at a signification level of $\alpha$ = 0.05 (*p*-value < 0.001 in both tests).
 
@@ -145,15 +147,17 @@ Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/Da
 
 ___
 ### **7. Dashboard**
-To view and play with the interactive Dashboard, please download the **[app](https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/3_Dashboard.py)** into a directory of your choice. Then, run the app using the following command in Windows:
-```bash
-python 3_Dashboard.py
-```
-And visit http://127.0.0.1:8050/ in your web browser.
+To view and play with the interactive Dashboard, please visit this **[link](https://data-jobs-mx-2023.onrender.com)**.
 
 <p align="center">
 	<img src="Images/Dashboard.png?raw=true" width=65% height=65%>
 </p>
+
+Or, if you prefer to deploy the app locally, please download the **[app](https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/3_Dashboard.py)** into a directory of your choice. Then, run the app using the following command in Windows:
+```bash
+python 3_Dashboard.py
+```
+And visit http://127.0.0.1:8050/ in your web browser.
 
 Please note that Python 3 and its libraries Numpy, Pandas, Plotly and Dash are required for properly running the dashboard.
 
