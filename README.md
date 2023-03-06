@@ -113,7 +113,7 @@ Data Scientist | $39,687 | $39,750
 Business Analyst | $32,415 | $32,000
 Data Analyst | $21,240 | $16,750
 
-Thus, in view of the table above, the mean and median monthly salaries are consistent for each data job category. And, it is noteworthy that the salary figures for Data Architect positions are the highest ones.
+Thus, in view of the table above, the mean and median monthly salaries are consistent for each data job category. And, it is noteworthy that the salary figures for Data Architect positions are the highest ones. Indeed, from the effect size analysis, the mean salary difference between Data Architect and Data Scientist positions was, not only statistically significant, but also practically significant as a difference of $41,875 MXN per month is huge in the Mexican labor market.
 
 A further one-way analysis of variance (ANOVA) procedure and a Kruskal-Wallis H test confirmed that the salary differences among the data jobs categories were statistically significant at a signification level of $\alpha$ = 0.05 (*p*-value < 0.001 in both tests).
 
