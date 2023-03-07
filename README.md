@@ -41,11 +41,11 @@ The methodology of the present study is based on Rollin’s Foundational Methodo
 3) **Data collection**: Data was collected from the OCC Website (Mexico) on 07 February 2022, through web scraping with Python 3 and its libraries Selenium and BeautifulSoup.
 4) **Data exploration and preparation**: Data then was explored and cleaned with Python 3 and its libraries Pandas and Numpy. 
 5) **Data analysis**: Data was analyzed with Python 3 and its libraries Pandas, Scipy and Statsmodels and visualized with Matplotlib, Seaborn, Folium and Plotly. 
-6) **Statistical analysis**: The D'Agostino-Pearson normality test was used to assess the normality of the data jobs salary distribution. Then, both parametric (ANOVA and t-test with unequal variance) and non-parametric (Mann-Whitney U and Kruskal-Wallis H) tests were carried out to assess the significance of the obtained results. Furthermore, an effect size analysis was carried out by computing the absolute mean salary differences, the Cohen’s d, and the bootstrap confidence intervals for the mean for each data job category. This, in order to assess whether the salary differences are significant from a practical point of view.
+6) **Statistical analysis**: The D'Agostino-Pearson normality test was used to assess the normality of the data jobs salary distribution. Then, both parametric (ANOVA and t-test with unequal variance) and non-parametric (Mann-Whitney U and Kruskal-Wallis H) tests were carried out to assess the significance of the obtained results. Furthermore, an effect size analysis was carried out by computing the absolute mean salary differences, the Cohen’s d, and the bootstrap confidence intervals for the mean for each data job category. This, in order to assess whether the salary differences were significant from a practical point of view.
 
 Furthermore:
 
-7) A **dashboard** was built with Python 3 and its libraries Plotly and Dash.
+7) A <a href="https://data-jobs-mx-2023.onrender.com"><b>dashboard</b></a> was built with Python 3 and its libraries Plotly and Dash.
 8) A <a href="https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Report.pdf"><b>final report</b></a> was written with the complete results obtained from the data.
 9) Some <a href="https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Slides.pdf"><b>slides</b></a> were prepared with the **most important insights** from the report.
 
@@ -147,7 +147,7 @@ Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/Da
 
 ___
 ### **7. Dashboard**
-To view and play with the interactive Dashboard, please visit this **[link](https://data-jobs-mx-2023.onrender.com)**.
+To view and play with the **interactive dashboard**, please visit this **[link](https://data-jobs-mx-2023.onrender.com)**.
 
 <p align="center">
 	<img src="Images/Dashboard.png?raw=true" width=65% height=65%>
