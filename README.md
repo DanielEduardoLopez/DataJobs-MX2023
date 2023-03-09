@@ -46,7 +46,7 @@ The methodology of the present study is based on Rollin’s Foundational Methodo
 
 Furthermore:
 
-8) A <a href="https://data-jobs-mx-2023.onrender.com"><b>dashboard</b></a> was built with Python 3 and its libraries Plotly and Dash.
+8) A <a href="https://data-jobs-mx-2023.onrender.com"><b>dashboard</b></a> was built with Plotly and Dash and it was deployed on Render.
 9) A <a href="https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Report.pdf"><b>final report</b></a> was written with the complete results obtained from the data.
 10) Some <a href="https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Slides.pdf"><b>slides</b></a> were prepared with the **most important insights** from the report.
 
