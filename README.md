@@ -12,7 +12,21 @@
 **[Github](https://github.com/DanielEduardoLopez)**
 
 ____
-### **1. Introduction**
+### **Contents**
+
+1. [Introduction](#intro)<br>
+2. [General Objective](#objective)<br>
+3. [Research Question](#question)<br>
+4. [Hypothesis](#hypothesis)<br>
+5. [Abridged Methodology](#methodology)<br>
+6. [Main Results](#results)<br>
+7. [Dashboard](#dashboard)<br>
+8. [Conclusions](#conclusions)<br>
+9. [Partial Bibliography](#bibliography)<br>
+10. [Description of Files in Repository](#files)<br>
+
+____
+### **1. Introduction** <a class="anchor" id="intro"></a>
 With the emergence of the big data, new jobs have appeared demanding new sets of skills and expertise for extracting value from data (Axis Talent, 2020):
 
 - Business Analysts (BA)
@@ -24,16 +38,16 @@ With the emergence of the big data, new jobs have appeared demanding new sets of
 Which one is the most valued in the Mexican labor market currently?
 
 ____
-### **2. General Objective**
+### **2. General Objective** <a class="anchor" id="objective"></a>
 To identify which data job category has the highest salary in the Mexican labor market in February 2023 according to the OCC website.
 ____
-### **3. Research Question**
+### **3. Research Question** <a class="anchor" id="question"></a>
 Which data job category has the highest salary in the Mexican labor market in February 2023 according to the OCC website?
 ____
-### **4. Hypothesis**
+### **4. Hypothesis** <a class="anchor" id="hypothesis"></a>
 The **Data Scientist** position has the highest salary in the Mexican labor market in February 2023 according to the OCC website.
 ____
-### **5. Abridged Methodology**
+### **5. Abridged Methodology** <a class="anchor" id="methodology"></a>
 The methodology of the present study is based on Rollin’s Foundational Methodology for Data Science (Rollins, 2015).
 
 1) **Analytical approach**: Descriptive and inferential statistics.
@@ -51,7 +65,7 @@ Furthermore:
 10) Some <a href="https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Slides.pdf"><b>slides</b></a> were prepared with the **most important insights** from the report.
 
 ___
-### **6. Main Results**
+### **6. Main Results** <a class="anchor" id="results"></a>
 From the sample of 258 data jobs retrieved, the most demanded data job category was **Data Analyst**, with 35.3% of the total demand of data jobs in Mexico at the time of this study. On the contrary, **Business Analyst** positions are the less demanded, with only a 10.9% out of the total.
 
 <p align="center">
@@ -147,7 +161,7 @@ Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/Da
 
 
 ___
-### **7. Dashboard**
+### **7. Dashboard** <a class="anchor" id="dashboard"></a>
 To view and play with the **interactive dashboard**, please visit this **[link](https://data-jobs-mx-2023.onrender.com)**.
 
 <p align="center">
@@ -164,7 +178,7 @@ Please note that Python 3 and its libraries Numpy, Pandas, Plotly and Dash are r
 
 
 ___
-### **8. Conclusions**
+### **8. Conclusions** <a class="anchor" id="conclusions"></a>
 **Data Architect** is the data job category with **the highest salary** in the Mexican labor market in February 2023 according to the OCC website.
 
 On the contrary, **Data Analyst** is the data job category **more demanded** in the current Mexican labor market and across the different Mexican states, even though it was also the one with **the lowest salary**.
@@ -192,12 +206,12 @@ This study had **limitations**:
 
 
 ___
-### **9. Partial Bibliography**
+### **9. Partial Bibliography** <a class="anchor" id="bibliography"></a>
 - **Axis Talent. (2020).** *The Ecosystem of Data Jobs - Making sense of the Data Job Market*. Retrieved from Axis Talent: https://www.axistalent.io/blog/the-ecosystem-of-data-jobs-making-sense-of-the-data-job-market
 - **Rollins, J. B. (2015).** *Metodología Fundamental para la Ciencia de Datos*. Somers: IBM Corporation. Retrieved from https://www.ibm.com/downloads/cas/WKK9DX51
 
 ___
-### **10. Description of Files in Repository**
+### **10. Description of Files in Repository** <a class="anchor" id="files"></a>
 File | Description 
 --- | --- 
 1_DataJobsMX2023_DataCollection.ipynb | Notebook with the Python code for collecting the required data from the OCC website through web scraping.
