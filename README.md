@@ -3,13 +3,11 @@
 </p>
 
 # Data Jobs Salaries in Mexico in February 2023
-#### By Daniel Eduardo López
+#### Daniel Eduardo López
+
+<font size="-1"><a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a> | <a href="https://github.com/DanielEduardoLopez">GitHub </a></font>
 
 **28/02/2023**
-
-**[LinkedIn](https://www.linkedin.com/in/daniel-eduardo-lopez)**
-
-**[Github](https://github.com/DanielEduardoLopez)**
 
 ____
 ### **Contents**
