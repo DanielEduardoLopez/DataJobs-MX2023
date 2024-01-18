@@ -154,7 +154,7 @@ Finally, for **Business Analyst** positions, the organizations offering higher s
 	<img src="Images/Fig14_SalaryPerCompanyAndDataJobCategoryPX.png?raw=true" width=60% height=60%>
 </p>
 
-Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/DataJobsMX2022/blob/main/Report.pdf)** for the full results and discussion.
+Please refer to the **[Complete Report](https://github.com/DanielEduardoLopez/DataJobsMX2023/blob/main/Report.pdf)** for the full results and discussion.
 
 
 
